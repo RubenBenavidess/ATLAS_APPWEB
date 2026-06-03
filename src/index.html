@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>ATLAS - Adaptive Tool for Legislative Audit and Standards</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Plataforma de auditoría normativa y evaluación de cumplimiento basada en IA">
+  <meta name="theme-color" content="#124559">
+
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-eval';
+    style-src 'self' 'unsafe-inline';
+    font-src 'self' data:;
+    img-src 'self' data: blob:;
+    connect-src 'self' http://localhost:8081 ws://localhost:4200 ws://localhost:4200/ws;
+    frame-ancestors 'none';
+    base-uri 'self';
+    form-action 'self';
+  ">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body class="antialiased">
+  <app-root></app-root>
+</body>
+</html>
