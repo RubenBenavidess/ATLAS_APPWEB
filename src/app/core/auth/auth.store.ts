@@ -86,7 +86,7 @@ export const AuthStore = signalStore(
             authService.login(request).pipe(
               tapResponse({
                 next: (response) => {
-                  const { token } = response.datos;
+                  const { token } = response.datos!;
                   const user = decodeToken(token);
                   saveToken(token);
                   patchState(store, {

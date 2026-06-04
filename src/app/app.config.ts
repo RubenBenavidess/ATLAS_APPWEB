@@ -5,12 +5,17 @@ import { routes } from './app.routes';
 import { authInterceptor } from './core/auth/auth.interceptor';
 import { errorInterceptor } from './core/http/error.interceptor';
 import { AuthStore } from './core/auth/auth.store';
+import { AppConfigService } from './core/services/app-config.service';
 
 function initializeApp(): () => Promise<void> {
-  return () => {
-    const authStore = inject(AuthStore);
+  // Capture injected dependencies synchronously (within injection context)
+  const appConfigService = inject(AppConfigService);
+  const authStore = inject(AuthStore);
+
+  // Return the async initializer function
+  return async () => {
+    await appConfigService.load();
     authStore.loadStoredToken();
-    return Promise.resolve();
   };
 }
 

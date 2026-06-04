@@ -110,7 +110,7 @@ export class LoginComponent {
     this.authService.login(credentials).subscribe({
       next: (response) => {
         this.isLoading = false;
-        const { token } = response.datos;
+        const { token } = response.datos!;
         
         // Guardar token en localStorage
         localStorage.setItem('atlas_token', token);

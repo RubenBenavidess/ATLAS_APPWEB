@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: '/api/ms-autenticacion',
+  apiUrl: 'https://api.tudominio.com',
   sessionTimeoutMs: 30 * 60 * 1000,
 };

@@ -1,0 +1,12 @@
+services:
+  atlas-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: atlas-frontend
+    ports:
+      - "8085:80"
+    restart: unless-stopped
+    # Para cambiar el apiUrl sin recompilar, monta tu config.json:
+    # volumes:
+    #   - ./config.json:/usr/share/nginx/html/config.json:ro

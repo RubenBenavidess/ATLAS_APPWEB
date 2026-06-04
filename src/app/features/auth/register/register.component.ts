@@ -161,9 +161,9 @@ export class RegisterComponent {
     this.authService.register(this.form.getRawValue()).subscribe({
       next: (response) => {
         this.isLoading.set(false);
-        this.registeredEmail.set(response.datos.correo);
+        this.registeredEmail.set(response.datos!.correo);
         this.successMessage.set(
-          `Cuenta creada exitosamente. Se ha enviado un correo a ${response.datos.correo} para establecer tu contrasena.`
+          `Cuenta creada exitosamente. Se ha enviado un correo a ${response.datos!.correo} para establecer tu contrasena.`
         );
         this.toastService.success('Registro exitoso');
         this.startCooldown();

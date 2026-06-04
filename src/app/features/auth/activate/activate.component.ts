@@ -140,7 +140,7 @@ export class ActivateComponent implements OnInit {
     this.authService.validateToken(this.token).subscribe({
       next: (response) => {
         this.isValidating.set(false);
-        if (response.datos.valido) {
+        if (response.datos?.valido) {
           this.tokenValid.set(true);
           this.username.set(response.datos.nombreUsuario);
         } else {

@@ -51,7 +51,7 @@ export interface ValidateTokenResponse {
 export interface ApiResponse<T> {
   status: number;
   mensaje: string;
-  datos: T;
+  datos?: T;
   errores?: string[];
   timestamp: string;
 }

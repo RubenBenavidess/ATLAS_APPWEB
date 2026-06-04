@@ -172,7 +172,7 @@ export class UsersManagementComponent implements OnInit {
     this.isLoading.set(true);
     this.userService.getUsers().subscribe({
       next: (response) => {
-        this.users.set(response.datos);
+        this.users.set(response.datos ?? []);
         this.isLoading.set(false);
       },
       error: (error) => {

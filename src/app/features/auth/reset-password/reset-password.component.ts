@@ -139,7 +139,7 @@ export class ResetPasswordComponent implements OnInit {
     this.authService.validateToken(this.token).subscribe({
       next: (response) => {
         this.isValidating.set(false);
-        if (response.datos.valido) {
+        if (response.datos?.valido) {
           this.tokenValid.set(true);
         } else {
           this.tokenValid.set(false);
